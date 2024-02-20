@@ -29,7 +29,7 @@ $client->setScopes([Google_Service_Sheets::SPREADSHEETS]);
 $service = new Google_Service_Sheets($client);
 
 // Specify your spreadsheet ID and range
-$spreadsheetId = '15lGgRd3BRda7iBIibPmj9SzynV6NYSrTETmfKiyx4TY';
+$spreadsheetId = '1OgOhnn3t3zg0Ixo4N0ySDgQ-WwbiA_NcYFZWuDogHes';
 $range = 'DATA LENGKAP MC'; // Change this to the actual sheet name
 
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
