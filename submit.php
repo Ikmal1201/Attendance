@@ -36,7 +36,6 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     // Get form data
     $data = [
         $_POST['dari_mana'],
-        $_POST['jumlah_bayaran'],
         $_POST['nama'],
         $_POST['no_tel'],
         $_POST['emel'],
