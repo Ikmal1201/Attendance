@@ -68,58 +68,55 @@
 
   <!-- Your HTML form -->
   <form id="myForm">
-    <label for="dari-mana">DARI MANA / SPHU:</label>
-        <input type="text" name="dari_mana" required>
+    <label for="B">DARI MANA / SPHU:</label>
+        <input type="text" name="B" required>
 
-        <label for="jumlah-bayaran">JUMLAH BAYARAN:</label>
-        <input type="text" name="jumlah_bayaran" required>
+        <label for="H">NAMA:</label>
+        <input type="text" name="H" required>
 
-        <label for="nama">NAMA:</label>
-        <input type="text" name="nama" required>
+        <label for="I">NO. TEL:</label>
+        <input type="text" name="I" required>
 
-        <label for="no-tel">NO. TEL:</label>
-        <input type="text" name="no_tel" required>
+        <label for="J">EMEL:</label>
+        <input type="email" name="J" required>
 
-        <label for="emel">EMEL:</label>
-        <input type="email" name="emel" required>
+        <label for="K">DAERAH:</label>
+        <input type="text" name="K" required>
 
-        <label for="daerah">DAERAH:</label>
-        <input type="text" name="daerah" required>
+        <label for="L">mukim:</label>
+        <input type="text" name="L" required>
 
-        <label for="mukim">mukim:</label>
-        <input type="text" name="mukim" required>
+        <label for="M">ALAMAT:</label>
+        <textarea name="M" required></textarea>
 
-        <label for="alamat">ALAMAT:</label>
-        <textarea name="alamat" required></textarea>
+        <label for="N">NEGERI:</label>
+        <input type="text" name="N" required>
 
-        <label for="negeri">NEGERI:</label>
-        <input type="text" name="negeri" required>
+        <label for="O">ID EJEN/ UPLINE:</label>
+        <input type="text" name="O">
 
-        <label for="id-ejen">ID EJEN/ UPLINE:</label>
-        <input type="text" name="id_ejen" required>
+        <label for="P">text:</label>
+        <input type="text" name="P">
 
-        <label for="text-field">text:</label>
-        <input type="text" name="text_field" required>
-
-        <label for="catatan">CATATAN:</label>
-        <textarea name="catatan"></textarea>
+        <label for="R">CATATAN:</label>
+        <textarea name="R"></textarea>
 
         <label>Attendance:</label>
-        <input type="checkbox" name="attendance[]" value="Induksi 1.0"> Induksi 1.0
-        <input type="checkbox" name="attendance[]" value="Induksi 2.0"> Induksi 2.0
-        <input type="checkbox" name="attendance[]" value="Induksi 3.0"> Induksi 3.0
-        <input type="checkbox" name="attendance[]" value="Induksi 4.0"> Induksi 4.0
-        <input type="checkbox" name="attendance[]" value="Induksi 5.0"> Induksi 5.0
-        <input type="checkbox" name="attendance[]" value="Induksi 6.0"> Induksi 6.0
+        <input type="checkbox" name="T" value="T"> Induksi 1.0
+        <input type="checkbox" name="U" value="U"> Induksi 2.0
+        <input type="checkbox" name="V" value="V"> Induksi 3.0
+        <input type="checkbox" name="W" value="W"> Induksi 4.0
+        <input type="checkbox" name="X" value="X"> Induksi 5.0
+        <input type="checkbox" name="Y" value="Y"> Induksi 6.0
 
-        <label for="coaching-cvo">coaching cvo:</label>
-        <input type="text" name="coaching_cvo">
+        <label for="AY">coaching cvo:</label>
+        <input type="text" name="AY">
 
-        <label for="preview">preview:</label>
-        <input type="text" name="preview">
+        <label for="BF">preview:</label>
+        <input type="text" name="BF">
 
-        <label for="kekerapan-kehadiran">KEKERAPAN KEHADIRAN:</label>
-        <input type="text" name="kekerapan_kehadiran">
+        <label for="BT">KEKERAPAN KEHADIRAN:</label>
+        <input type="text" name="BT">
 
     <input type="submit" value="Submit">
   </form>
@@ -129,22 +126,21 @@
   function handleFormSubmit() {
     // Get form data
     var data = {
-      dari_mana: document.getElementById('dari_mana').value,
-      jumlah_bayaran: document.getElementById('jumlah_bayaran').value,
-      nama: document.getElementById('nama').value,
-      no_tel: document.getElementById('no_tel').value,
-      emel: document.getElementById('emel').value,
-      daerah: document.getElementById('daerah').value,
-      mukim: document.getElementById('mukim').value,
-      alamat: document.getElementById('alamat').value,
-      negeri: document.getElementById('negeri').value,
-      id_ejen: document.getElementById('id_ejen').value,
-      text_field: document.getElementById('text_field').value,
-      catatan: document.getElementById('catatan').value,
-      attendance: getCheckedCheckboxesForArray('attendance'),
-      coaching_cvo: document.getElementById('coaching_cvo').value,
-      preview: document.getElementById('preview').value,
-      kekerapan_kehadiran: document.getElementById('kekerapan_kehadiran').value
+      B: document.getElementById('B').value,
+      H: document.getElementById('H').value,
+      I: document.getElementById('I').value,
+      J: document.getElementById('J').value,
+      K: document.getElementById('K').value,
+      L: document.getElementById('L').value,
+      M: document.getElementById('M').value,
+      N: document.getElementById('N').value,
+      O: document.getElementById('O').value,
+      P: document.getElementById('P').value,
+      R: document.getElementById('R').value,
+      attendance[T,U,V,W,X,Y]: getCheckedCheckboxesForArray('attendance[T,U,V,W,X,Y]'),
+      AY: document.getElementById('AY').value,
+      BF: document.getElementById('BF').value,
+      BT: document.getElementById('BT').value
     };
 
     // Initialize the Google Sheets API
