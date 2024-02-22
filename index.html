@@ -60,14 +60,14 @@
         }
     </style>
   <!-- Include the Google Sheets API script -->
-  <script src="https://apis.google.com/js/api.js"></script>
+   <script src="https://apis.google.com/js/api.js"></script>
 </head>
 <body>
 
   <h1>Kehadiran</h1>
 
   <!-- Your HTML form -->
-  <form id="myForm">
+   <form id="myForm" onsubmit="handleFormSubmit(); return false;">
     <label for="B">DARI MANA / SPHU:</label>
         <input type="text" name="B" required>
 
@@ -101,13 +101,13 @@
         <label for="R">CATATAN:</label>
         <textarea name="R"></textarea>
 
-        <label>Attendance:</label>
-        <input type="checkbox" name="T" value="T"> Induksi 1.0
-        <input type="checkbox" name="U" value="U"> Induksi 2.0
-        <input type="checkbox" name="V" value="V"> Induksi 3.0
-        <input type="checkbox" name="W" value="W"> Induksi 4.0
-        <input type="checkbox" name="X" value="X"> Induksi 5.0
-        <input type="checkbox" name="Y" value="Y"> Induksi 6.0
+        <label for="T">Attendance:</label>
+        <input type="checkbox" id="T" name="T" value="T"> Induksi 1.0
+        <input type="checkbox" id="U" name="U" value="U"> Induksi 2.0
+        <input type="checkbox" id="V" name="V" value="V"> Induksi 3.0
+        <input type="checkbox" id="W" name="W" value="W"> Induksi 4.0
+        <input type="checkbox" id="X" name="X" value="X"> Induksi 5.0
+        <input type="checkbox" id="Y" name="Y" value="Y"> Induksi 6.0
 
         <label for="AY">coaching cvo:</label>
         <input type="text" name="AY">
@@ -137,7 +137,14 @@
       O: document.getElementById('O').value,
       P: document.getElementById('P').value,
       R: document.getElementById('R').value,
-      attendance[T,U,V,W,X,Y]: getCheckedCheckboxesForArray('attendance[T,U,V,W,X,Y]'),
+      attendance: {
+        T: document.getElementById('T').checked,
+        U: document.getElementById('U').checked,
+        V: document.getElementById('V').checked,
+        W: document.getElementById('W').checked,
+        X: document.getElementById('X').checked,
+        Y: document.getElementById('Y').checked,
+      },
       AY: document.getElementById('AY').value,
       BF: document.getElementById('BF').value,
       BT: document.getElementById('BT').value
@@ -187,12 +194,6 @@
       }, function(reason) {
         console.error('Error: ' + reason.result.error.message);
       });
-    }
-
-    // Helper function to get values of checked checkboxes into an array
-    function getCheckedCheckboxesForArray(checkboxName) {
-      var checkboxes = document.querySelectorAll(`input[name="${checkboxName}"]:checked`);
-      return Array.from(checkboxes).map(checkbox => checkbox.value);
     }
   }
 </script>
