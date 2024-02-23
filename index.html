@@ -1,207 +1,136 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Kehadiran</title>
+    <meta charset="UTF-8">
+    <meta http_equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kehadiran</title>
    <style>
         body {
             font-family: 'Arial', sans-serif;
-            margin: 20px;
-            padding: 20px;
             background-color: #f4f4f4;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
         }
 
         form {
-            max-width: 600px;
-            margin: 0 auto;
             background-color: #fff;
             padding: 20px;
-            border-radius: 8px;
+            border-radius: 10px;
             box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
         }
 
         label {
             display: block;
-            margin-bottom: 8px;
-            font-weight: bold;
+            margin-bottom: 5px;
         }
 
-        input,
-        textarea {
+        input, select, textarea {
             width: 100%;
             padding: 8px;
-            margin-bottom: 12px;
-            box-sizing: border-box;
+            margin-bottom: 15px;
             border: 1px solid #ccc;
             border-radius: 4px;
+            box-sizing: border-box;
         }
 
-        textarea {
-            resize: vertical;
+        select {
+            width: calc(100% + 2px); /* Adjusting for padding and border in select */
+            margin-bottom: 15px;
         }
 
-        button {
+        input[type="submit"] {
             background-color: #4caf50;
             color: #fff;
-            padding: 10px 15px;
             border: none;
+            padding: 10px 15px;
             border-radius: 4px;
             cursor: pointer;
         }
 
-        button:hover {
+        input[type="submit"]:hover {
             background-color: #45a049;
         }
-
-        input[type="checkbox"] {
-            margin-bottom: 6px;
-            margin-right: 5px;
-        }
     </style>
-  <!-- Include the Google Sheets API script -->
-   <script src="https://apis.google.com/js/api.js"></script>
 </head>
 <body>
 
-  <h1>Kehadiran</h1>
+<div>
+    <form action="" name="Copy of DATA MANASEEK CONSULTANT">
+        <label for="dari-mana">DARI MANA / SPHU:</label>
+        <input type="text" name="dari_mana" required>
 
-  <!-- Your HTML form -->
-   <form id="myForm" onsubmit="handleFormSubmit(); return false;">
-    <label for="B">DARI MANA / SPHU:</label>
-        <input type="text" name="B" required>
+        <label for="jumlah-bayaran">JUMLAH BAYARAN:</label>
+        <input type="text" name="jumlah_bayaran" required>
 
-        <label for="H">NAMA:</label>
-        <input type="text" name="H" required>
+        <label for="nama">NAMA:</label>
+        <input type="text" name="nama" required>
 
-        <label for="I">NO. TEL:</label>
-        <input type="text" name="I" required>
+        <label for="no-tel">NO. TEL:</label>
+        <input type="text" name="no_tel" required>
 
-        <label for="J">EMEL:</label>
-        <input type="email" name="J" required>
+        <label for="emel">EMEL:</label>
+        <input type="email" name="emel" required>
 
-        <label for="K">DAERAH:</label>
-        <input type="text" name="K" required>
+        <label for="daerah">DAERAH:</label>
+        <input type="text" name="daerah" required>
 
-        <label for="L">mukim:</label>
-        <input type="text" name="L" required>
+        <label for="mukim">mukim:</label>
+        <input type="text" name="mukim" required>
 
-        <label for="M">ALAMAT:</label>
-        <textarea name="M" required></textarea>
+        <label for="alamat">ALAMAT:</label>
+        <textarea name="alamat" required></textarea>
 
-        <label for="N">NEGERI:</label>
-        <input type="text" name="N" required>
+        <label for="negeri">NEGERI:</label>
+        <input type="text" name="negeri" required>
 
-        <label for="O">ID EJEN/ UPLINE:</label>
-        <input type="text" name="O">
+        <label for="id-ejen">ID EJEN/ UPLINE:</label>
+        <input type="text" name="id_ejen" required>
 
-        <label for="P">text:</label>
-        <input type="text" name="P">
+        <label for="text-field">text:</label>
+        <input type="text" name="text_field" required>
 
-        <label for="R">CATATAN:</label>
-        <textarea name="R"></textarea>
+        <label for="catatan">CATATAN:</label>
+        <textarea name="catatan"></textarea>
 
-      <label for="attendance">Attendance:</label>
-<select id="attendance" name="attendance">
-    <option value="T">Induksi 1.0</option>
-    <option value="U">Induksi 2.0</option>
-    <option value="V">Induksi 3.0</option>
-    <option value="W">Induksi 4.0</option>
-    <option value="X">Induksi 5.0</option>
-    <option value="Y">Induksi 6.0</option>
+       <label for="attendance">Attendance:</label>
+<select name="attendance" required>
+    <option value="Induksi 1.0">Induksi 1.0</option>
+    <option value="Induksi 2.0">Induksi 2.0</option>
+    <option value="Induksi 3.0">Induksi 3.0</option>
+    <option value="Induksi 4.0">Induksi 4.0</option>
+    <option value="Induksi 5.0">Induksi 5.0</option>
+    <option value="Induksi 6.0">Induksi 6.0</option>
 </select>
-     
-        <label for="AY">coaching cvo:</label>
-        <input type="text" name="AY">
 
-        <label for="BF">preview:</label>
-        <input type="text" name="BF">
+        <label for="coaching-cvo">coaching cvo:</label>
+        <input type="text" name="coaching_cvo">
 
-        <label for="BT">KEKERAPAN KEHADIRAN:</label>
-        <input type="text" name="BT">
+        <label for="preview">preview:</label>
+        <input type="text" name="preview">
 
-    <input type="submit" value="Submit">
-  </form>
+        <label for="kekerapan-kehadiran">KEKERAPAN KEHADIRAN:</label>
+        <input type="text" name="kekerapan_kehadiran">
 
-<!-- Your JavaScript code -->
+        <input type="submit" value="Submit">
+    </form>
+</div>
+
 <script>
-  function handleFormSubmit() {
-    // Get form data
-    var data = {
-      B: document.getElementById('B').value,
-      H: document.getElementById('H').value,
-      I: document.getElementById('I').value,
-      J: document.getElementById('J').value,
-      K: document.getElementById('K').value,
-      L: document.getElementById('L').value,
-      M: document.getElementById('M').value,
-      N: document.getElementById('N').value,
-      O: document.getElementById('O').value,
-      P: document.getElementById('P').value,
-      R: document.getElementById('R').value,
-      attendance: {
-        T: document.getElementById('T').checked,
-        U: document.getElementById('U').checked,
-        V: document.getElementById('V').checked,
-        W: document.getElementById('W').checked,
-        X: document.getElementById('X').checked,
-        Y: document.getElementById('Y').checked,
-      },
-      AY: document.getElementById('AY').value,
-      BF: document.getElementById('BF').value,
-      BT: document.getElementById('BT').value
-    };
+    const scriptURL = 'https://script.google.com/macros/s/AKfycbzLH1LsEtMmFuGuN8a2hQ_1BAafEhChita2CYCbwoRgiOwo0sWtxoFpSxHsRu1OtVc/exec'
+    const form = document.forms['Copy of DATA MANASEEK CONSULTANT']
 
-    // Initialize the Google Sheets API
-    gapi.load('client', initClient);
-
-    function initClient() {
-      gapi.client.init({
-        apiKey: 'AIzaSyCurYijbFJ7ytN3qFpxf90COUIYJXMul8Q',
-        discoveryDocs: ['https://sheets.googleapis.com/$discovery/rest?version=v4'],
-      }).then(function() {
-        // Call the function to append data to the sheet
-        appendDataToSheet(data);
-      });
-    }
-
-    function appendDataToSheet(data) {
-      // Specify your spreadsheet ID and range
-      var spreadsheetId = '1OgOhnn3t3zg0Ixo4N0ySDgQ-WwbiA_NcYFZWuDogHes';
-      var range = 'DATA LENGKAP MC';
-
-      // Prepare the values for the API request
-      var values = [Object.values(data)];
-
-      // Append the data to the sheet
-      gapi.client.sheets.spreadsheets.values.append({
-        spreadsheetId: spreadsheetId,
-        range: range,
-        valueInputOption: 'RAW',
-        insertDataOption: 'INSERT_ROWS',
-        resource: {
-          values: values,
-        },
-      }).then(function(response) {
-        var result = response.result;
-        console.log(result);
-
-        if (result.updates && result.updates.updatedRows > 0) {
-          console.log('Data submitted successfully!');
-          // After successfully submitting data, redirect to another page
-          window.location.href = 'thank-you-page.html';
-        } else {
-          console.error('Error submitting data.');
-        }
-      }, function(reason) {
-        console.error('Error: ' + reason.result.error.message);
-      });
-    }
-  }
+    form.addEventListener('submit', e => {
+        e.preventDefault()
+        fetch(scriptURL, { method: 'POST', body: new FormData(form)})
+            .then(response => console.log('Success!', response))
+            .catch(error => console.error('Error!', error.message))
+    })
 </script>
-
-
-
 
 </body>
 </html>
