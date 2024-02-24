@@ -71,7 +71,7 @@
 
 
         <label for="DARI MANA  /SPHU">DARI MANA / SPHU</label>
-        <input type="text" name="DARI MANA  /SPHU" >
+        <input type="text" name="DARI MANA  /SPHU" required>
 
         <label for="NAMA">NAMA</label>
         <input type="text" name="NAMA" required>
@@ -118,14 +118,22 @@
     form.addEventListener('submit', e => {
         e.preventDefault();
 
+        // Get the entered email value
+        const userEmail = form.elements['EMEL'].value;
+
         // Get the selected value from the attendance dropdown
         const selectedValue = form.elements['attendance'].value;
 
         // Set the attendance column based on the selected value
         form.elements['attendance'].value = selectedValue;
 
+        // Append email value and attendance choice to form data
+        const formData = new FormData(form);
+        formData.append('userEmail', userEmail);
+        formData.append('attendanceChoice', selectedValue);
+
         // Submit the form
-        fetch(scriptURL, { method: 'POST', body: new FormData(form) })
+        fetch(scriptURL, { method: 'POST', body: formData })
             .then(response => {
                 console.log('Success!', response);
                 // Display success message
@@ -138,6 +146,7 @@
             });
     });
 </script>
+
 
 
 </body>
