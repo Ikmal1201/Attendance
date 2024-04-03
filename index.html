@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta http_equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Cool Attendance Form</title>
+    <title>Kehadiran Form</title>
     <style>
         body {
             display: flex;
@@ -114,19 +114,19 @@
 
 <script>
     const scriptURL = 'https://script.google.com/macros/s/AKfycbzLH1LsEtMmFuGuN8a2hQ_1BAafEhChita2CYCbwoRgiOwo0sWtxoFpSxHsRu1OtVc/exec';
-    const form = document.forms['Cool_Attendance_Form'];
+    const form = document.forms['Copy_of_DATA_MANASEEK_CONSULTANT'];
 
     form.addEventListener('submit', e => {
         e.preventDefault();
 
         // Get the entered email value
-        const userEmail = form.elements['Email'].value;
+        const userEmail = form.elements['EMEL'].value;
 
         // Get the selected value from the attendance dropdown
-        const selectedValue = form.elements['Attendance'].value;
+        const selectedValue = form.elements['attendance'].value;
 
         // Set the attendance column based on the selected value
-        form.elements['Attendance'].value = selectedValue;
+        form.elements['attendance'].value = selectedValue;
 
         // Append email value and attendance choice to form data
         const formData = new FormData(form);
@@ -147,6 +147,8 @@
             });
     });
 </script>
+
+
 
 </body>
 </html>
